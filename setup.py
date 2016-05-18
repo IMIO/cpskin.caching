@@ -46,6 +46,9 @@ setup(
         'plone.api',
         'setuptools',
         'z3c.jbot',
+        'Products.MemcachedManager',
+        'z3c.unconfigure',
+        'collective.monkeypatcher>=1.0.1',
     ],
     extras_require={
         'test': [

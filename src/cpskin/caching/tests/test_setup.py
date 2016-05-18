@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
+from plone.app.testing import quickInstallProduct
 from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING  # noqa
+from cpskin.caching.patch import isCachePurgingEnabled
 from plone import api
 
 import unittest
@@ -28,17 +30,10 @@ class TestSetup(unittest.TestCase):
         from plone.browserlayer import utils
         self.assertIn(ICpskinCachingLayer, utils.registered_layers())
 
+    def testReinstall(self):
+        portal = self.layer['portal']
+        quickInstallProduct(portal, 'kuleuven.caching')
+        quickInstallProduct(portal, 'kuleuven.caching')
 
-class TestUninstall(unittest.TestCase):
-
-    layer = CPSKIN_CACHING_INTEGRATION_TESTING
-
-    def setUp(self):
-        self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
-        self.installer.uninstallProducts(['cpskin.caching'])
-
-    def test_product_uninstalled(self):
-        """Test if cpskin.caching is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled(
-            'cpskin.caching'))
+    def testIsCachingEnabled(self):
+        self.assertEqual(isCachePurgingEnabled(), True)
