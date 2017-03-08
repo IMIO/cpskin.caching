@@ -77,8 +77,7 @@
       <value_type type="plone.registry.field.URI"/>
     </field>
     <value>
-      <element>http://frontend1.imio.be:5000</element>
-      <element>http://frontend2.imio.be:5000</element>
+      <element>Override by environment variable: CACHING_SERVERS</element>
     </value>
   </record>
 
