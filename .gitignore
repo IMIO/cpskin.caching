@@ -20,3 +20,9 @@ output.xml
 *.swp
 log.html
 report.html
+eggs/
+include/
+lib/
+local/
+pip-selfcheck.json
+share/
