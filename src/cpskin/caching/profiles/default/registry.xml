@@ -77,7 +77,7 @@
       <value_type type="plone.registry.field.URI"/>
     </field>
     <value>
-      <element>Override by environment variable: CACHING_SERVERS</element>
+            <element>http://override-by-environment-variable.CACHING_SERVERS</element>
     </value>
   </record>
 
