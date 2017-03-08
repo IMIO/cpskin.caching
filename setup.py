@@ -49,6 +49,7 @@ setup(
         'Products.MemcachedManager',
         'z3c.unconfigure',
         'collective.monkeypatcher>=1.0.1',
+        'python-memcached'
     ],
     extras_require={
         'test': [
