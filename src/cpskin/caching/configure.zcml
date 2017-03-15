@@ -13,6 +13,8 @@
 
   <include package=".browser" />
 
+  <adapter factory=".rewrite.CPSkinRewriter" />
+
   <include package="z3c.unconfigure" file="meta.zcml" />
 
   <unconfigure>
