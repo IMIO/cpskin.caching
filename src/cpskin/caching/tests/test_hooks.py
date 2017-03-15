@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import unittest
 import zope.component.testing
@@ -21,8 +22,6 @@ from plone.registry.fieldfactory import persistentFieldAdapter
 
 from ZPublisher.pubevents import PubSuccess
 from cpskin.caching.hooks import purge
-from cpskin.caching.patch import isCachePurgingEnabled
-from App.config import getConfiguration
 from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING  # noqa
 
 

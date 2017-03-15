@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from cpskin.caching.testing import CPSKIN_CACHING_ACCEPTANCE_TESTING  # noqa
+from cpskin.caching.testing import CPSKIN_CACHING_ACCEPTANCE_TESTING
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 

@@ -2,6 +2,8 @@
 from Products.MemcachedManager.MemcachedManager import \
     manage_addMemcachedManager
 
+CACHEAUTHID = 'MemcachedAuth'
+
 
 def post_install(context):
     """Post install script"""
@@ -9,8 +11,6 @@ def post_install(context):
         return
     portal = context.getSite()
     setupMemcachedManager(portal)
-
-CACHEAUTHID = 'MemcachedAuth'
 
 
 def setupMemcachedManager(portal):

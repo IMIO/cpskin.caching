@@ -2,6 +2,7 @@
 from zope.component import queryUtility
 from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.registry.interfaces import IRegistry
+from plone.cachepurging import utils
 
 
 def isCachePurgingEnabled(registry=None):
@@ -15,5 +16,6 @@ def isCachePurgingEnabled(registry=None):
         return False
     settings = registry.forInterface(ICachePurgingSettings, check=False)
     return settings.enabled
-from plone.cachepurging import utils
+
+
 utils.isCachePurgingEnabled = isCachePurgingEnabled

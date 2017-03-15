@@ -8,7 +8,6 @@ from plone.cachepurging.interfaces import IPurger
 from plone.cachepurging.utils import getURLsToPurge
 from plone.registry.interfaces import IRegistry
 from ZPublisher.interfaces import IPubSuccess
-from App.config import getConfiguration
 from cpskin.caching.patch import isCachePurgingEnabled
 
 logger = logging.getLogger('cpskin.caching')
