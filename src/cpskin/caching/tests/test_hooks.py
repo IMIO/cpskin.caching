@@ -26,7 +26,6 @@ from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING  # noqa
 
 
 class TestPurgeHandler(unittest.TestCase):
-
     def setUp(self):
         provideAdapter(AttributeAnnotations)
         provideAdapter(persistentFieldAdapter)
@@ -39,8 +38,7 @@ class TestPurgeHandler(unittest.TestCase):
         request = FauxRequest()
         alsoProvides(request, IAttributeAnnotatable)
 
-        IAnnotations(request)['plone.cachepurging.urls'] = set(
-            ['/foo', '/bar'])
+        IAnnotations(request)["plone.cachepurging.urls"] = set(["/foo", "/bar"])
 
         registry = Registry()
         registry.registerInterface(ICachePurgingSettings)
@@ -54,7 +52,7 @@ class TestPurgeHandler(unittest.TestCase):
             def __init__(self):
                 self.purged = []
 
-            def purgeAsync(self, url, httpVerb='PURGE'):
+            def purgeAsync(self, url, httpVerb="PURGE"):
                 self.purged.append(url)
 
         purger = FauxPurger()
@@ -62,15 +60,13 @@ class TestPurgeHandler(unittest.TestCase):
 
         notify(PubSuccess(request))
 
-        self.assertEquals([],
-                          purger.purged)
+        self.assertEquals([], purger.purged)
 
     def test_purge_with_config(self):
         request = FauxRequest()
         alsoProvides(request, IAttributeAnnotatable)
 
-        IAnnotations(request)['plone.cachepurging.urls'] = set(
-            ['/foo', '/bar'])
+        IAnnotations(request)["plone.cachepurging.urls"] = set(["/foo", "/bar"])
 
         registry = Registry()
         registry.registerInterface(ICachePurgingSettings)
@@ -85,19 +81,23 @@ class TestPurgeHandler(unittest.TestCase):
             def __init__(self):
                 self.purged = []
 
-            def purgeAsync(self, url, httpVerb='PURGE'):
+            def purgeAsync(self, url, httpVerb="PURGE"):
                 self.purged.append(url)
 
         purger = FauxPurger()
         provideUtility(purger)
-        os.environ['CACHING_SERVERS'] = 'http://localhost:1234 http://10.0.100.1:1235'
+        os.environ["CACHING_SERVERS"] = "http://localhost:1234 http://10.0.100.1:1235"
         notify(PubSuccess(request))
 
-        self.assertEquals(['http://localhost:1234/foo',
-                           'http://10.0.100.1:1235/foo',
-                           'http://localhost:1234/bar',
-                           'http://10.0.100.1:1235/bar'],
-                          purger.purged)
+        self.assertEquals(
+            [
+                "http://localhost:1234/foo",
+                "http://10.0.100.1:1235/foo",
+                "http://localhost:1234/bar",
+                "http://10.0.100.1:1235/bar",
+            ],
+            purger.purged,
+        )
 
 
 def test_suite():

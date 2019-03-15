@@ -18,29 +18,23 @@ class CpskinCachingLayer(PloneSandboxLayer):
         self.loadZCML(package=cpskin.caching)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'cpskin.caching:default')
+        applyProfile(portal, "cpskin.caching:default")
 
 
 CPSKIN_CACHING_FIXTURE = CpskinCachingLayer()
 
 
 CPSKIN_CACHING_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(CPSKIN_CACHING_FIXTURE,),
-    name='CpskinCachingLayer:IntegrationTesting'
+    bases=(CPSKIN_CACHING_FIXTURE,), name="CpskinCachingLayer:IntegrationTesting"
 )
 
 
 CPSKIN_CACHING_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(CPSKIN_CACHING_FIXTURE,),
-    name='CpskinCachingLayer:FunctionalTesting'
+    bases=(CPSKIN_CACHING_FIXTURE,), name="CpskinCachingLayer:FunctionalTesting"
 )
 
 
 CPSKIN_CACHING_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        CPSKIN_CACHING_FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE
-    ),
-    name='CpskinCachingLayer:AcceptanceTesting'
+    bases=(CPSKIN_CACHING_FIXTURE, REMOTE_LIBRARY_BUNDLE_FIXTURE, z2.ZSERVER_FIXTURE),
+    name="CpskinCachingLayer:AcceptanceTesting",
 )

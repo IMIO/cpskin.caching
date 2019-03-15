@@ -165,3 +165,14 @@ repos:
         pass_filenames: false
         language: system
         stages: [commit, push]
+  - repo: 'https://github.com/ambv/black.git'
+    rev: 19.3b0
+    hooks:
+      - id: black
+        name: black
+        description: 'Black: The uncompromising Python code formatter'
+        entry: black
+        language: python
+        language_version: python3
+        require_serial: true
+        types: [python]

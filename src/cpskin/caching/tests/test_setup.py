@@ -15,25 +15,24 @@ class TestSetup(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        self.portal = self.layer["portal"]
+        self.installer = api.portal.get_tool("portal_quickinstaller")
 
     def test_product_installed(self):
         """Test if cpskin.caching is installed."""
-        self.assertTrue(self.installer.isProductInstalled(
-            'cpskin.caching'))
+        self.assertTrue(self.installer.isProductInstalled("cpskin.caching"))
 
     def test_browserlayer(self):
         """Test that ICpskinCachingLayer is registered."""
-        from cpskin.caching.interfaces import (
-            ICpskinCachingLayer)
+        from cpskin.caching.interfaces import ICpskinCachingLayer
         from plone.browserlayer import utils
+
         self.assertIn(ICpskinCachingLayer, utils.registered_layers())
 
     def testReinstall(self):
-        portal = self.layer['portal']
-        quickInstallProduct(portal, 'kuleuven.caching')
-        quickInstallProduct(portal, 'kuleuven.caching')
+        portal = self.layer["portal"]
+        quickInstallProduct(portal, "kuleuven.caching")
+        quickInstallProduct(portal, "kuleuven.caching")
 
     def testIsCachingEnabled(self):
         self.assertEqual(isCachePurgingEnabled(), True)
