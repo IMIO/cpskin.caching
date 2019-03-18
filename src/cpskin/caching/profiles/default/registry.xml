@@ -32,6 +32,10 @@
   </record>
 
   <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting">
+    <field type="plone.registry.field.Bool">
+      <default>True</default>
+      <title>Enable VirtualHosting</title>
+    </field>
     <value>True</value>
   </record>
 
