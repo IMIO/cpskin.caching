@@ -5,7 +5,8 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add upgrade step to enable virtualHosting.
+  [bsuttor]
 
 
 1.1 (2019-03-18)
