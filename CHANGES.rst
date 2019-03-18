@@ -5,7 +5,7 @@ Changelog
 1.1 (unreleased)
 ----------------
 
--  Always enable caching with virtualhosting.
+- Always enable caching with virtualhosting.
   [jfrcohe]
 
 - Empty cachingProxies registry value. This value is get by environment variable.
