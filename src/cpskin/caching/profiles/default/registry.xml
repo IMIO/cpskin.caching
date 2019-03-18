@@ -30,7 +30,8 @@
     </field>
     <value>True</value>
   </record>
-  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="enabled">
+
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting">
     <value>True</value>
   </record>
 
