@@ -89,7 +89,7 @@ class CPSkinRewriter(object):
 
         # Minisites
         minisite = request.get("cpskin_minisite", None)
-        if minisite:
+        if minisite and minisite.is_minisite:
             domains.add(request.cpskin_minisite.minisite_url)
 
         # Virtual root, e.g. /Plone. Clear if we don't have any virtual root

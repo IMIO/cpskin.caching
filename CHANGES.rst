@@ -5,7 +5,11 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add explicit error if error during domain parsing
+  [jfroche]
+
+- Fix method to verify if we are using minisite
+  [jfroche]
 
 
 1.1.1 (2019-03-18)
