@@ -2,27 +2,21 @@
 # -*- coding: utf-8 -*-
 import os
 import unittest
+
 import zope.component.testing
-from zope.annotation.attribute import AttributeAnnotations
-from zope.annotation.interfaces import IAnnotations
-from zope.annotation.interfaces import IAttributeAnnotatable
-from zope.component import provideAdapter
-from zope.component import provideHandler
-from zope.component import provideUtility
-from zope.event import notify
-from zope.interface import alsoProvides
-from zope.interface import implements
-from plone.registry.interfaces import IRegistry
-from plone.registry import Registry
-from plone.cachepurging.interfaces import IPurger
-from plone.cachepurging.interfaces import ICachePurgingSettings
-from plone.cachepurging.tests.test_hooks import FauxRequest
-
-from plone.registry.fieldfactory import persistentFieldAdapter
-
-from ZPublisher.pubevents import PubSuccess
 from cpskin.caching.hooks import purge
 from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING  # noqa
+from plone.cachepurging.interfaces import ICachePurgingSettings, IPurger
+from plone.cachepurging.tests.test_hooks import FauxRequest
+from plone.registry import Registry
+from plone.registry.fieldfactory import persistentFieldAdapter
+from plone.registry.interfaces import IRegistry
+from zope.annotation.attribute import AttributeAnnotations
+from zope.annotation.interfaces import IAnnotations, IAttributeAnnotatable
+from zope.component import provideAdapter, provideHandler, provideUtility
+from zope.event import notify
+from zope.interface import alsoProvides, implements
+from ZPublisher.pubevents import PubSuccess
 
 
 class TestPurgeHandler(unittest.TestCase):

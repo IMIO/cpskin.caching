@@ -10,5 +10,8 @@ stdenv.mkDerivation rec {
     libxml2
     libxslt
     python27Packages.pillow
+    python27Packages.isort
+    python36Packages.black
+    python27Packages.flake8
   ];
 }

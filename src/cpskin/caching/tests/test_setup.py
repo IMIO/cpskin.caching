@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from plone.app.testing import quickInstallProduct
-from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING
-from cpskin.caching.patch import isCachePurgingEnabled
-from plone import api
-
 import unittest
+
+from cpskin.caching.patch import isCachePurgingEnabled
+from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING
+from plone import api
+from plone.app.testing import quickInstallProduct
 
 
 class TestSetup(unittest.TestCase):

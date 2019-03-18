@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
+import os
+import unittest
+
+import robotsuite
 from cpskin.caching.testing import CPSKIN_CACHING_ACCEPTANCE_TESTING
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
-
-import os
-import robotsuite
-import unittest
 
 
 def test_suite():

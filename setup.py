@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """Installer for the cpskin.caching package."""
 
-from setuptools import find_packages
-from setuptools import setup
-
+from setuptools import find_packages, setup
 
 long_description = (
     open("README.rst").read()

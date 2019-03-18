@@ -3,12 +3,12 @@
 import os
 import re
 import urlparse
-from zope.interface import implements
-from zope.component import adapts, queryUtility
-from plone.cachepurging.interfaces import IPurgePathRewriter
-from plone.cachepurging.interfaces import ICachePurgingSettings
-from plone.registry.interfaces import IRegistry
+
 from cpskin.caching.interfaces import ICpskinCachingLayer
+from plone.cachepurging.interfaces import ICachePurgingSettings, IPurgePathRewriter
+from plone.registry.interfaces import IRegistry
+from zope.component import adapts, queryUtility
+from zope.interface import implements
 
 
 class CPSkinRewriter(object):

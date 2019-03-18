@@ -19,6 +19,11 @@ repos:
         stages:
           - commit
           - push
+        additional_dependencies:
+          - flake8-blind-except
+          - flake8-debugger
+          - flake8-coding
+          - flake8-isort
         exclude: ^bootstrap-buildout.py$
       -
         id: check-yaml
@@ -55,6 +60,26 @@ repos:
         stages:
           - commit
           - push
+  - repo: 'https://github.com/ambv/black.git'
+    rev: 19.3b0
+    hooks:
+      - id: black
+        name: black
+        description: 'Black: The uncompromising Python code formatter'
+        entry: black
+        language: python
+        language_version: python3
+        require_serial: true
+        types: [python]
+  - repo: 'git://github.com/luismayta/pre-commit-isort'
+    rev: 1.0.1
+    hooks:
+      - id: isort
+        name: isort
+        args:
+          - -sp setup.cfg
+        language_version: python
+        types: [python]
   -
     repo: 'https://github.com/jumanjihouse/pre-commit-hooks.git'
     rev: 1.11.0
@@ -165,14 +190,3 @@ repos:
         pass_filenames: false
         language: system
         stages: [commit, push]
-  - repo: 'https://github.com/ambv/black.git'
-    rev: 19.3b0
-    hooks:
-      - id: black
-        name: black
-        description: 'Black: The uncompromising Python code formatter'
-        entry: black
-        language: python
-        language_version: python3
-        require_serial: true
-        types: [python]

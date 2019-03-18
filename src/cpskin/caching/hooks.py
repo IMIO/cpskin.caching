@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 import logging
 import os
-from zope.component import adapter, queryUtility
-from zope.annotation.interfaces import IAnnotations
+
+from cpskin.caching.patch import isCachePurgingEnabled
 from plone.cachepurging.hooks import KEY
 from plone.cachepurging.interfaces import IPurger
 from plone.cachepurging.utils import getURLsToPurge
 from plone.registry.interfaces import IRegistry
+from zope.annotation.interfaces import IAnnotations
+from zope.component import adapter, queryUtility
 from ZPublisher.interfaces import IPubSuccess
-from cpskin.caching.patch import isCachePurgingEnabled
 
 logger = logging.getLogger("cpskin.caching")
 

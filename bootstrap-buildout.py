@@ -23,7 +23,6 @@ import os
 import shutil
 import sys
 import tempfile
-
 from optparse import OptionParser
 
 tmpeggs = tempfile.mkdtemp()

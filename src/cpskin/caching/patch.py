@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from zope.component import queryUtility
+from plone.cachepurging import utils
 from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.registry.interfaces import IRegistry
-from plone.cachepurging import utils
+from zope.component import queryUtility
 
 
 def isCachePurgingEnabled(registry=None):

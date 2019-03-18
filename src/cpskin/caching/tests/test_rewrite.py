@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 import os
 import unittest
-from zope.interface import directlyProvides
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+
 from cpskin.caching.interfaces import ICpskinCachingLayer
+from cpskin.caching.rewrite import CPSkinRewriter
 from cpskin.caching.testing import CPSKIN_CACHING_INTEGRATION_TESTING
 from cpskin.minisite.minisite import MinisiteConfig, decorateRequest
-from cpskin.caching.rewrite import CPSkinRewriter
+from plone.app.testing import TEST_USER_ID, setRoles
+from zope.interface import directlyProvides
 
 
 class TestCpskinRewriter(unittest.TestCase):
