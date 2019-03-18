@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1 (unreleased)
+1.1 (2019-03-18)
 ----------------
 
 - Always enable caching with virtualhosting.
