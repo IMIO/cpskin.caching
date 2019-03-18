@@ -18,7 +18,7 @@ long_description = (
 
 setup(
     name="cpskin.caching",
-    version="1.1.1",
+    version="1.1.2.dev0",
     description="Caching configuration for cpskin",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
