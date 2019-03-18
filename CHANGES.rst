@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.2 (unreleased)
+1.1.2 (2019-03-18)
 ------------------
 
 - Add explicit error if error during domain parsing
