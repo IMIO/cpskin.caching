@@ -7,3 +7,5 @@ global-exclude *.nix
 global-exclude *.yaml
 exclude .gitlint
 exclude .yamllint
+exclude Makefile
+exclude requirements.txt
