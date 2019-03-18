@@ -26,7 +26,11 @@ class CPSkinRewriter(object):
         parsedDomain = re.search(
             "(?:(?P<scheme>http?|https?)://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*",
             domain,
-        ).groupdict()
+        )
+        if parsedDomain is not None:
+            parsedDomain = parsedDomain.groupdict()
+        else:
+            raise ValueError("Unable to parse domain: {}".format(domain))
         currentScheme = parsedDomain.get("scheme")
         if not currentScheme and parsedDomain.get("port"):
             currentScheme = portSchemeMap[parsedDomain.get("port")]

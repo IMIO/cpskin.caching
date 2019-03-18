@@ -109,3 +109,7 @@ class TestCpskinRewriter(unittest.TestCase):
             self.rewriter.set_protocol_on_domain("https://bla.imio.be"),
             "https://bla.imio.be:443",
         )
+
+    def test_raise_parsing_domain(self):
+        with self.assertRaises(ValueError):
+            self.rewriter.set_protocol_on_domain("")
