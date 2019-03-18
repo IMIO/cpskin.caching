@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from zope.component import queryUtility
+from plone.cachepurging import utils
 from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.registry.interfaces import IRegistry
+from zope.component import queryUtility
 
 
 def isCachePurgingEnabled(registry=None):
@@ -15,5 +16,6 @@ def isCachePurgingEnabled(registry=None):
         return False
     settings = registry.forInterface(ICachePurgingSettings, check=False)
     return settings.enabled
-from plone.cachepurging import utils
+
+
 utils.isCachePurgingEnabled = isCachePurgingEnabled

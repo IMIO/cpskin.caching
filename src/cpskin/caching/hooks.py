@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 import logging
 import os
-from zope.component import adapter, queryUtility
-from zope.annotation.interfaces import IAnnotations
+
+from cpskin.caching.patch import isCachePurgingEnabled
 from plone.cachepurging.hooks import KEY
 from plone.cachepurging.interfaces import IPurger
 from plone.cachepurging.utils import getURLsToPurge
 from plone.registry.interfaces import IRegistry
+from zope.annotation.interfaces import IAnnotations
+from zope.component import adapter, queryUtility
 from ZPublisher.interfaces import IPubSuccess
-from App.config import getConfiguration
-from cpskin.caching.patch import isCachePurgingEnabled
 
-logger = logging.getLogger('cpskin.caching')
+logger = logging.getLogger("cpskin.caching")
 
 
 @adapter(IPubSuccess)
@@ -44,16 +44,16 @@ def purge(event):
 
     proxies_url = getCachingConfiguration()
     if proxies_url:
-        proxies_url = proxies_url.split(' ')
+        proxies_url = proxies_url.split(" ")
     else:
         return
 
     for path in paths:
         for url in getURLsToPurge(path, proxies_url):
-            logger.debug('purging ' + url)
+            logger.debug("purging " + url)
             purger.purgeAsync(url)
 
 
 def getCachingConfiguration():
-    caching_servers = os.environ.get('CACHING_SERVERS', None)
+    caching_servers = os.environ.get("CACHING_SERVERS", None)
     return caching_servers
