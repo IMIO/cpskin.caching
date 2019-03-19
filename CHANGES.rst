@@ -5,7 +5,8 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add ScalesPurgePaths adapter to purge dexterity images and files.
+  [bsuttor]
 
 
 1.1.2 (2019-03-18)
