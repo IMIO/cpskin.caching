@@ -33,15 +33,11 @@
     <value>True</value>
   </record>
 
-<<<<<<< Updated upstream
-  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting">
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="enabled">
     <field type="plone.registry.field.Bool">
       <default>True</default>
       <title>Enable VirtualHosting</title>
     </field>
-=======
-  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="enabled">
->>>>>>> Stashed changes
     <value>True</value>
   </record>
 
