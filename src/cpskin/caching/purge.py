@@ -29,12 +29,6 @@ class ScalesPurgePaths(object):
             self.context.REQUEST)
         return scale_util.getAvailableSizes().keys()
 
-        # registry = getUtility(IRegistry)
-        # reg_list = registry['plone.allowed_sizes']
-        # sizes = [i.split(' ', 1)[0] for i in reg_list]
-        # sizes.append('download')
-        # return sizes
-
     def getRelativePaths(self):
         prefix = '/' + self.context.virtual_url_path()
 
