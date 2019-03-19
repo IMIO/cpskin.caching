@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.3 (unreleased)
+1.1.3 (2019-03-19)
 ------------------
 
 - Add ScalesPurgePaths adapter to purge dexterity images and files.
